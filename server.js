@@ -21,7 +21,7 @@ const pool = require('./db/pool');
 
 fastify.get('/', async (request, reply) => {
     try {
-        const result = await pool.query('SELECT id, title, icon, description FROM programs ORDER BY created_at DESC');
+        const result = await pool.query('SELECT id, title, icon, description FROM programs WHERE approved = true ORDER BY created_at DESC');
         // Convert icon binary to base64 for rendering
         const programs = result.rows.map(row => ({
             ...row,
