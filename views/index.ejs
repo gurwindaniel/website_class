@@ -1,0 +1,28 @@
+<%- include('./partials/header.ejs') %>
+
+
+<div class="container mt-5">
+	<h2 class="mb-4">Programs</h2>
+	<% if (typeof error !== 'undefined' && error) { %>
+		<div class="alert alert-danger"><%= error %></div>
+	<% } %>
+	<div class="row">
+		<% (programs || []).forEach(function(program) { %>
+			<div class="col-md-4 mb-4">
+				<div class="card h-100 shadow">
+					<% if (program.iconBase64) { %>
+						<img src="data:image/png;base64,<%= program.iconBase64 %>" class="card-img-top" alt="Program Icon" style="height:200px;object-fit:cover;">
+					<% } else { %>
+						<div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height:200px;">No Image</div>
+					<% } %>
+					<div class="card-body">
+						<h5 class="card-title"><%= program.title %></h5>
+						<p class="card-text"><%= program.description %></p>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
