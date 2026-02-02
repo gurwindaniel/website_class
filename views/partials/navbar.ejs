@@ -1,26 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%); box-shadow: 0 4px 12px rgba(33,147,176,0.15);">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Tours & Travels</a>
-
+    <a class="navbar-brand d-flex align-items-center" href="/" style="font-weight: bold; font-size: 1.5rem;">
+      <span style="font-size: 2rem; margin-right: 0.5rem;">&#9992;</span> <!-- Airplane icon -->
+      Tours & Travels
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/">Program</a>
+          <a class="nav-link active stylish-link" href="/">Packages</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/news">Add News</a>
+          <a class="nav-link stylish-link" href="/news">Add News</a>
         </li>
-
-
+        <!-- Add more nav items as needed -->
       </ul>
-     
     </div>
   </div>
 </nav>
+<style>
+  .navbar-brand {
+    letter-spacing: 2px;
+  }
+  .stylish-link {
+    position: relative;
+    transition: color 0.2s;
+  }
+  .stylish-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .stylish-link:hover {
+    color: #ffe082 !important;
+  }
+  .stylish-link:hover::after {
+    width: 100%;
+  }
+</style>
