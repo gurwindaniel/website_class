@@ -27,10 +27,10 @@ fastify.get('/', async (request, reply) => {
             ...row,
             iconBase64: row.icon ? Buffer.from(row.icon).toString('base64') : null
         }));
-        return reply.view('index.ejs', { programs });
+        return reply.view('index.ejs', { programs , page:'index'});
     } catch (err) {
         request.log.error(err);
-        return reply.view('index.ejs', { programs: [], error: 'Error fetching programs.' });
+        return reply.view('index.ejs', { programs: [], error: 'Error fetching programs.', page: 'index' });
     }
 });
 
