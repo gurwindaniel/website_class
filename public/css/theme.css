@@ -1,0 +1,149 @@
+/* Theme Variables and Styles */
+
+/* Light Theme (default) */
+.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --card-shadow: rgba(0, 0, 0, 0.125);
+    --muted-text: #6c757d;
+    --link-color: #2193b0;
+    --heading-color: #2193b0;
+    --container-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --card-bg: #16213e;
+    --card-border: #0f3460;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --muted-text: #adb5bd;
+    --link-color: #6dd5ed;
+    --heading-color: #6dd5ed;
+    --container-bg: #0f3460;
+    --input-bg: #16213e;
+    --input-border: #0f3460;
+}
+
+/* Apply theme colors */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific overrides for Bootstrap components */
+.dark-theme .card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: 0 0.125rem 0.25rem var(--card-shadow);
+}
+
+.dark-theme .card-body {
+    background-color: var(--card-bg);
+}
+
+.dark-theme .card-title {
+    color: var(--heading-color) !important;
+}
+
+.dark-theme .card-text {
+    color: var(--text-color);
+}
+
+.dark-theme h1, 
+.dark-theme h2, 
+.dark-theme h3, 
+.dark-theme h4, 
+.dark-theme h5, 
+.dark-theme h6 {
+    color: var(--heading-color);
+}
+
+.dark-theme p {
+    color: var(--text-color);
+}
+
+.dark-theme a:not(.nav-link):not(.navbar-brand):not(.btn) {
+    color: var(--link-color);
+}
+
+.dark-theme .text-muted {
+    color: var(--muted-text) !important;
+}
+
+.dark-theme .container {
+    background-color: transparent;
+}
+
+.dark-theme .form-control {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+}
+
+.dark-theme .form-control:focus {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 0.25rem rgba(109, 213, 237, 0.25);
+}
+
+.dark-theme .form-control::placeholder {
+    color: var(--muted-text);
+}
+
+.dark-theme .btn-outline-primary {
+    color: var(--link-color);
+    border-color: var(--link-color);
+}
+
+.dark-theme .btn-outline-primary:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+}
+
+.dark-theme .alert {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-color);
+}
+
+.dark-theme .alert-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-color: #dc3545;
+    color: #f8d7da;
+}
+
+.dark-theme .bg-secondary {
+    background-color: var(--container-bg) !important;
+}
+
+/* Dark theme navbar adjustments */
+.dark-theme .navbar {
+    background: linear-gradient(90deg, #0f3460 0%, #16213e 100%) !important;
+}
+
+/* Light theme specific styles */
+.light-theme .card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.light-theme h2 {
+    color: var(--heading-color);
+}
+
+/* Smooth transitions for all themed elements */
+.card,
+.form-control,
+.btn,
+.alert,
+.navbar {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}

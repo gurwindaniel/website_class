@@ -17,6 +17,12 @@
         <li class="nav-item">
           <a class="nav-link stylish-link" href="/news">Add News</a>
         </li>
+        <!-- Theme Toggle Button -->
+        <li class="nav-item ms-2">
+          <button id="themeToggleBtn" class="btn btn-sm theme-toggle-btn" title="Toggle Theme">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </li>
         <!-- Add more nav items as needed -->
       </ul>
     </div>
@@ -46,5 +52,24 @@
   }
   .stylish-link:hover::after {
     width: 100%;
+  }
+  .theme-toggle-btn {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .theme-toggle-btn:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.1);
+  }
+  #themeIcon {
+    font-size: 1.2rem;
   }
 </style>
